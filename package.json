@@ -4,7 +4,7 @@
   "description": "A preprocessor for webpack",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
   "homepage": "https://github.com/jdmichaud/preprocessor-loader#readme",
   "dependencies": {
     "loader-utils": "^0.2.16"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
   }
 }
