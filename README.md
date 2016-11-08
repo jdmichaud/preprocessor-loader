@@ -7,8 +7,8 @@ A preprocessor is a tool parsing file and replacing a piece of text by another.
 It is extensively used in the [C language](http://tigcc.ticalc.org/doc/cpp.html#SEC2) and in
 the [Unix world](https://www.gnu.org/software/m4/m4.html) in general.
 
-/!\ This is still the early stage of development. preprocessor-loader can only replace __FILE__ and
-__LINE__ as of this writing.
+/!\ This is still the early stage of development. preprocessor-loader can only replace `__FILE__` and
+`__LINE__` as of this writing.
 
 ## Ok so, what does it do??
 
