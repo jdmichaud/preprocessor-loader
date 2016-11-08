@@ -26,7 +26,7 @@ module.exports = function(content) {
   });
 
   // Replace __FILE__ by the file name
-  content = content.replace(/__FILE__/g, '\'' + this.resourcePath + '\'');
+  content = content.replace(/__FILE__/g, this.resourcePath);
   // Replace __LINE__ by the line number
   content = content
               .split('\n')
