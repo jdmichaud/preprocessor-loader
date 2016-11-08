@@ -2,7 +2,7 @@
 
 ## What it is?
 
-A preprocessor is a tool parsing file and replacing a piece of text by another.
+A preprocessor is a tool parsing files and replacing a piece of text by another.
 
 It is extensively used in the [C language](http://tigcc.ticalc.org/doc/cpp.html#SEC2) and in
 the [Unix world](https://www.gnu.org/software/m4/m4.html) in general.
