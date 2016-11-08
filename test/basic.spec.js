@@ -2,7 +2,7 @@ var should = require("should");
 var path = require("path");
 var preprocessorLoader = require("../");
 
-function run(resourcePath, query, content) {
+function run(resourcePath, query, content, expected) {
   content = content || new Buffer("1234");
   var file = null;
   var context = {
@@ -12,22 +12,21 @@ function run(resourcePath, query, content) {
       context: "/this/is/the/context"
     },
     emitFile: function(url, content2) {
-      content2.should.be.eql(content);
+      content2.should.be.eql(expected);
       file = url;
     }
   };
 
   var result = preprocessorLoader.call(context, content)
 
-  console.log('file:', file);
   return {
     file: file,
     result: result
   }
 }
 
-function test(excepted, resourcePath, query, content) {
-  run(resourcePath, query, content).result.should.be.eql(excepted);
+function test(expected, resourcePath, query, content) {
+  run(resourcePath, query, content, expected).file.should.be.eql(resourcePath);
 }
 
 describe("preprocessor-loader", function() {

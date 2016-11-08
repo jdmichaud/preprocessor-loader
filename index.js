@@ -36,13 +36,8 @@ module.exports = function(content) {
               .join('\n');
   // TODO(JD): __FUNCTION__
 
-  var url = loaderUtils.interpolateName(this, config.name, {
-    context: config.context || this.options.context,
-    content: content,
-    regExp: config.regExp
-  });
   if (query.emitFile === undefined || query.emitFile) {
-    this.emitFile(url, content);
+    this.emitFile(this.resourcePath, content);
   }
   return content;
 }
