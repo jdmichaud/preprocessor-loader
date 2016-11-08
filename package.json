@@ -1,0 +1,27 @@
+{
+  "name": "preprocessor-loader",
+  "version": "0.0.1",
+  "description": "A preprocessor for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdmichaud/preprocessor-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "preprocessor",
+    "macro"
+  ],
+  "author": "jean.daniel.michaud@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdmichaud/preprocessor-loader/issues"
+  },
+  "homepage": "https://github.com/jdmichaud/preprocessor-loader#readme",
+  "dependencies": {
+    "loader-utils": "^0.2.16"
+  }
+}
