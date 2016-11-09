@@ -9,7 +9,7 @@ the [Unix world](https://www.gnu.org/software/m4/m4.html) in general.
 
 ## Ok so, what does it do??
 
-### __FILE__ and __LINE__ expansion
+### `__FILE__` and `__LINE__` expansion
 
 Let's say you have a javascript called `index.js` like so:
 ``` javascript
@@ -27,7 +27,7 @@ Once preprocessed, it will produce:
 ### User defined expansion
 
 Configure webpack to load the preprocessor-loader and provide a configuration file:
-``` json
+``` javascript
 {
   module: {
     loaders: [
@@ -46,7 +46,7 @@ In the configuration file, you will defined your macros:
 {
   "macros": [
     {
-      "declaration" : "MAX (a,b )",
+      "declaration" : "MAX (a,b)",
       "definition" : "a > b ? a : b"
     },
     {
@@ -64,7 +64,7 @@ Here is your javascript file called `main.js`:
 3 LOG_INFO("Your variable is " + 42);
 ```
 
-After the execution of webpack, you file will contain:
+After the execution of webpack, your file will contain:
 ``` javascript
 1 'use strict';
 2 const v = 42;
@@ -79,4 +79,34 @@ After the execution of webpack, you file will contain:
   exclude: /node_modules/
   loader: 'preprocessor',
 },
+```
+
+An optional config object can be provided in the query string, and will contain a string representing the configuration file name:
+
+``` javascript
+{
+  test: /\.js$/,
+  exclude: /node_modules/
+  loader: 'preprocessor?condig=./preprocessor-config.json',
+},
+```
+
+## Configuration file
+
+The configuration file contains an array of user defined macros:
+
+
+``` json
+{
+  "macros": [
+    {
+      "declaration" : "MAX (a,b)",
+      "definition" : "a > b ? a : b"
+    },
+    {
+      "declaration" : "LOG_INFO(message)",
+      "definition" : "console.log(message + ' (__FILE__:__LINE__)');"
+    }
+  ]
+}
 ```
