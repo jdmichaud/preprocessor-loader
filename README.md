@@ -32,7 +32,7 @@ Configure webpack to load the preprocessor-loader and provide a configuration fi
   module: {
     loaders: [
       { test: /\.js$/,
-        loader: 'preprocessor?config=preprocessor-loader.json',
+        loader: 'pprocessor?config=pprocessor-loader.json',
         exclude: [/bower_components/, /node_modules/],
       },
     ],
@@ -77,7 +77,7 @@ After the execution of webpack, your file will contain:
 {
   test: /\.js$/,
   exclude: /node_modules/
-  loader: 'preprocessor',
+  loader: 'pprocessor',
 },
 ```
 
@@ -87,7 +87,7 @@ An optional config object can be provided in the query string, and will contain 
 {
   test: /\.js$/,
   exclude: /node_modules/
-  loader: 'preprocessor?condig=./preprocessor-config.json',
+  loader: 'pprocessor?condig=./pprocessor-config.json',
 },
 ```
 

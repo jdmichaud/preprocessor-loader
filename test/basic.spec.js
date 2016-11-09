@@ -29,7 +29,7 @@ function test(expected, resourcePath, query, content) {
   run(resourcePath, query, content, expected).file.should.be.eql(resourcePath);
 }
 
-describe('preprocessor-loader', () => {
+describe('pprocessor-loader', () => {
   it('should replace __FILE__ by the file name', () => {
     const content = 'g__FILE_____ae643Y$%J&^55W#$^jh__FILE__s&^ERW%^U3__FILE__q4b';
     const filename = 'test.js';
