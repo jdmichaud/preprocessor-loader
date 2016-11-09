@@ -69,4 +69,12 @@ describe('preprocessor-loader', () => {
     const result = '\n\n\nconsole.log("this is a " + variable + \' (test.js:4)\');';
     test(result, filename, 'config=./test/basic.spec.json', content);
   });
+  it('should accept buffer as content', () => {
+    const content = 'This is a test\nMYMACRO\nEnd of file';
+    const contentBuffer = new Buffer(content);
+    const filename = 'test.js';
+    const definition = 'Bla bla\n\n***';
+    const result = `This is a test\n${definition}\nEnd of file`;
+    test(result, filename, 'config=./test/basic.spec.json', contentBuffer);
+  });
 });

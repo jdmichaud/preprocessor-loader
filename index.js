@@ -63,6 +63,7 @@ function replaceMacros(content, macros) {
 }
 
 module.exports = function (content) {
+  content = content.toString('utf-8');
   if (this.cacheable) this.cacheable();
   if (!this.emitFile) throw new Error('emitFile is required from module system');
 
