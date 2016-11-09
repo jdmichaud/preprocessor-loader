@@ -1,0 +1,20 @@
+{
+  "macros": [
+    {
+      "declaration" : "MYMACRO",
+      "definition" : "Bla bla\n\n***"
+    },
+    {
+      "declaration" : "NO_PARAM_MACRO()",
+      "definition" : "noParamMacro()"
+    },
+    {
+      "declaration" : "MAX (a,b )",
+      "definition" : "a > b ? a : b"
+    },
+    {
+      "declaration" : "LOG_INFO(message)",
+      "definition" : "console.log(message + ' (__FILE__:__LINE__)');"
+    }
+  ]
+}

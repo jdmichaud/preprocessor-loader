@@ -1,0 +1,52 @@
+/************************ AIRBNB Javascript lint rules ***********************/
+// https://github.com/airbnb/javascript/blob/master/linters/.eslintrc
+{
+  'extends': 'airbnb-base',
+
+  /******************* addendum ************************/
+    'rules': {
+
+    /*
+     * We disable some AIRBNB rules
+     */
+
+    // Too hard
+    'strict': 0,
+    // Makes javascript code look like C++ ok, but javascript ain't C++
+    'object-shorthand': 0,
+    // There is a console in the browser
+    'no-console': 0,
+    // PhantomJS is not ES6 yet and the babel polyfill does not include let or const
+    'no-var': 0,
+    // Even C does not enforce this anymore
+    'vars-on-top': 0,
+    // This is a problem for $scope. There is a solution from John Papa, but it
+    // does not feel like a simplification but more of a regression. So to me
+    // the return on investment is not so good
+    'no-param-reassign': 0,
+    // I still haven't understand the rational of naming anonymous function
+    'func-names': 0,
+    // Too hard when debugging,
+    'no-unused-vars': 0,
+    // Broken directive. Cannot configure it to avoid .spec.js file...
+    'import/no-extraneous-dependencies': 0,
+    /*
+     * Some additonal restrictions
+     */
+
+    // Max number of statements in a function to keep complexity in check
+    'max-statements': [2, 25],
+
+    },
+    'globals': {
+      '__FILE__': true,
+      '__LINE__': true,
+      'LOG_DEBUG': true,
+      'LOG_INFO': true,
+      'LOG_WARNING': true,
+      'LOG_ERROR': true,
+    },
+    "env": {
+      'jasmine': true,
+    }
+}

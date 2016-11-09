@@ -4,7 +4,8 @@
   "description": "A preprocessor for webpack",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec"
+    "eslint": "eslint *.js **/*.js",
+    "test": "eslint *.js **/*.js && mocha -R spec"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,9 @@
     "loader-utils": "^0.2.16"
   },
   "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
     "mocha": "^3.1.2",
     "should": "^11.1.1"
   }
