@@ -14,14 +14,14 @@ the [Unix world](https://www.gnu.org/software/m4/m4.html) in general.
 
 Let's say you have a javascript called `index.js` like so:
 ``` javascript
-1 'use strict;'
+1 'use strict';
 2 console.log('This is a log (__FILE__:__LINE__)');
 ```
 
 Once preprocessed, it will produce:
 
 ``` javascript
-1 'use strict;'
+1 'use strict';
 2 console.log('This is a log (index.js:2)');
 ```
 
