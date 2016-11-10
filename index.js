@@ -65,7 +65,6 @@ function replaceMacros(content, macros) {
 module.exports = function (content) {
   content = content.toString('utf-8');
   if (this.cacheable) this.cacheable();
-  if (!this.emitFile) throw new Error('emitFile is required from module system');
 
   var query = loaderUtils.parseQuery(this.query);
   var config = {};
@@ -86,9 +85,6 @@ module.exports = function (content) {
   content = replaceLinenumber(content);
   // TODO(JD): __FUNCTION__
 
-  if (query.emitFile === undefined || query.emitFile) {
-    this.emitFile(this.resourcePath, content);
-  }
   return content;
 };
 module.exports.raw = true;
