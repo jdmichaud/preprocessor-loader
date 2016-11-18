@@ -9,7 +9,7 @@ var fs = require('fs');
 var loaderUtils = require('loader-utils');
 
 function replaceFilename(content, filename) {
-  return content.replace(/__FILE__/g, filename);
+  return content.replace(/__FILE__/g, filename.replace('\\', '/'));
 }
 
 function replaceLinenumber(content) {

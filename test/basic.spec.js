@@ -19,14 +19,11 @@ function run(resourcePath, query, content, expected) {
 
   var result = preprocessorLoader.call(context, content);
 
-  return {
-    file: file,
-    result: result,
-  };
+  return result;
 }
 
 function test(expected, resourcePath, query, content) {
-  run(resourcePath, query, content, expected).file.should.be.eql(resourcePath);
+  run(resourcePath, query, content, expected);
 }
 
 describe('pprocessor-loader', () => {
@@ -34,6 +31,12 @@ describe('pprocessor-loader', () => {
     const content = 'g__FILE_____ae643Y$%J&^55W#$^jh__FILE__s&^ERW%^U3__FILE__q4b';
     const filename = 'test.js';
     const result = `g${filename}___ae643Y$%J&^55W#$^jh${filename}s&^ERW%^U3${filename}q4b`;
+    test(result, filename, '', content);
+  });
+  it('should replace backslahes by slahes in filename', () => {
+    const content = 'g__FILE_____ae643';
+    const filename = 'path\\in\\windows\\test.js';
+    const result = 'gpath/in/windows/test.js___ae643';
     test(result, filename, '', content);
   });
   it('should replace __LINE__ by the line number', () => {
