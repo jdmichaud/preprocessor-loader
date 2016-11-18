@@ -18,12 +18,11 @@ function run(resourcePath, query, content, expected) {
   };
 
   var result = preprocessorLoader.call(context, content);
-
   return result;
 }
 
 function test(expected, resourcePath, query, content) {
-  run(resourcePath, query, content, expected);
+  run(resourcePath, query, content, expected).should.equal(expected);
 }
 
 describe('pprocessor-loader', () => {
