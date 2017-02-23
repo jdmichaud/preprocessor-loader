@@ -71,7 +71,12 @@ module.exports = function (content) {
 
   // Load config files
   if (query.config !== undefined && query.config !== '') {
-    config = JSON.parse(fs.readFileSync(query.config, 'utf8'));
+    try {
+      config = JSON.parse(fs.readFileSync(query.config, 'utf8'));
+    } catch (e) {
+      console.error('exception:', e);
+      throw e;
+    }
   }
 
   // Replace user defined macros
